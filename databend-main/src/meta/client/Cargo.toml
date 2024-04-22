@@ -1,0 +1,52 @@
+[package]
+name = "databend-common-meta-client"
+description = "common meta grpc"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+doctest = false
+test = true
+
+[features]
+enable-histogram = ["databend-common-metrics/enable-histogram"]
+
+[dependencies]
+databend-common-arrow = { path = "../../common/arrow" }
+databend-common-base = { path = "../../common/base" }
+databend-common-grpc = { path = "../../common/grpc" }
+databend-common-meta-api = { path = "../api" }
+databend-common-meta-kvapi = { path = "../kvapi" }
+databend-common-meta-types = { path = "../types" }
+databend-common-metrics = { path = "../../common/metrics" }
+databend-common-tracing = { path = "../../common/tracing" }
+
+anyerror = { workspace = true }
+derive_more = { workspace = true }
+futures = { workspace = true }
+itertools = { workspace = true }
+log = { workspace = true }
+logcall = { workspace = true }
+minitrace = { workspace = true }
+once_cell = { workspace = true }
+parking_lot = { workspace = true }
+prost = { workspace = true }
+semver = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tonic = { workspace = true }
+
+[dev-dependencies]
+databend-common-exception = { path = "../../common/exception" }
+databend-common-meta-app = { path = "../app" }
+
+anyhow = { workspace = true }
+rand = { workspace = true }
+
+[build-dependencies]
+databend-common-building = { path = "../../common/building" }

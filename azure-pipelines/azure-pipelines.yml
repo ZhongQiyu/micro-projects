@@ -1,0 +1,46 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+pool:
+  vmImage: 'macOS-latest'
+steps:
+- script: 
+    echo instalation of dependencies
+    
+    brew install vtk boost eigen flann qt liblas
+    
+    mkdir deps && cd deps  
+    
+    mkdir pcl_build
+    
+    git clone https://github.com/PointCloudLibrary/pcl.git
+    
+    curl https://patch-diff.githubusercontent.com/raw/PointCloudLibrary/pcl/pull/3763.patch |git apply
+    
+    cd pcl_build
+    
+    echo CMAKE
+        
+    cmake -S../pcl -DVTK_DIR="/usr/local/lib/cmake/vtk-8.2" -DCMAKE_OSX_SYSROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk"
+    
+    make
+    
+    make install
+    
+    cd ..
+    cd ..
+
+  displayName: 'Instalation of dependencies'
+- script: |
+    mkdir build && cd build
+    cmake -S../ -DQt5Widgets_DIR="/usr/local/opt/qt/lib/cmake/Qt5Widgets"
+    
+    make
+    
+    make install
+
+  displayName: 'compilation of 3D Forest'

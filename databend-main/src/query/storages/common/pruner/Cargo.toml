@@ -1,0 +1,25 @@
+[package]
+name = "databend-storages-common-pruner"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+databend-common-exception = { path = "../../../../common/exception" }
+databend-common-expression = { path = "../../../expression" }
+databend-common-functions = { path = "../../../functions" }
+
+databend-storages-common-index = { path = "../index" }
+databend-storages-common-table-meta = { path = "../table_meta" }
+
+log = { workspace = true }
+serde = { workspace = true }
+
+typetag = { workspace = true }

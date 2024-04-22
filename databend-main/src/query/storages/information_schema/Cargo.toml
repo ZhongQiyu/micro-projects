@@ -1,0 +1,21 @@
+[package]
+name = "databend-common-storages-information-schema"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+databend-common-ast = { path = "../../../query/ast" }
+databend-common-catalog = { path = "../../catalog" }
+databend-common-meta-app = { path = "../../../meta/app" }
+databend-common-storages-view = { path = "../view" }
+
+[build-dependencies]
+databend-common-building = { path = "../../../common/building" }

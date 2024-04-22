@@ -1,0 +1,47 @@
+[package]
+name = "databend-common-storages-parquet"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+databend-common-arrow = { path = "../../../common/arrow" }
+databend-common-base = { path = "../../../common/base" }
+databend-common-catalog = { path = "../../catalog" }
+databend-common-exception = { path = "../../../common/exception" }
+databend-common-expression = { path = "../../expression" }
+databend-common-functions = { path = "../../functions" }
+databend-common-meta-app = { path = "../../../meta/app" }
+databend-common-metrics = { path = "../../../common/metrics" }
+databend-common-pipeline-core = { path = "../../pipeline/core" }
+databend-common-storage = { path = "../../../common/storage" }
+databend-storages-common-pruner = { path = "../common/pruner" }
+databend-storages-common-table-meta = { path = "../common/table_meta" }
+
+arrow-array = { workspace = true }
+arrow-buffer = { workspace = true }
+arrow-schema = { workspace = true }
+async-backtrace = { workspace = true }
+async-trait = { workspace = true }
+bytes = { workspace = true }
+chrono = { workspace = true }
+ethnum = { workspace = true }
+futures = { workspace = true }
+log = { workspace = true }
+opendal = { workspace = true }
+parquet = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+thrift = "0.17.0"
+typetag = { workspace = true }
+
+[dev-dependencies]
+databend-common-sql = { path = "../../sql" }
+tempfile = "3.4.0"

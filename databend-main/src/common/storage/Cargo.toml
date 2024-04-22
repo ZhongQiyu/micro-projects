@@ -1,0 +1,43 @@
+[package]
+name = "databend-common-storage"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+[features]
+storage-hdfs = ["databend-common-meta-app/storage-hdfs"]
+
+[dependencies]
+databend-common-arrow = { path = "../arrow" }
+databend-common-auth = { path = "../auth" }
+databend-common-base = { path = "../base" }
+databend-common-exception = { path = "../exception" }
+databend-common-expression = { path = "../../query/expression" }
+databend-common-meta-app = { path = "../../meta/app" }
+databend-common-metrics = { path = "../metrics" }
+databend-enterprise-storage-encryption = { path = "../../query/ee_features/storage_encryption" }
+
+anyhow = { workspace = true }
+arrow-schema = { workspace = true }
+async-backtrace = { workspace = true }
+async-trait = { workspace = true }
+bytes = { workspace = true }
+chrono = { workspace = true }
+dashmap = { workspace = true, features = ["serde"] }
+flagset = "0.4"
+futures = { workspace = true }
+log = { workspace = true }
+metrics = "0.20.1"
+once_cell = { workspace = true }
+opendal = { workspace = true }
+ordered-float = { workspace = true }
+parquet = { workspace = true }
+regex = { workspace = true }
+reqwest = { workspace = true }
+reqwest-hickory-resolver = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]

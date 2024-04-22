@@ -1,0 +1,78 @@
+[package]
+name = "databend-common-functions"
+version = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+publish = { workspace = true }
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies] # In alphabetical order
+# Workspace dependencies
+databend-common-arrow = { path = "../../common/arrow" }
+databend-common-base = { path = "../../common/base" }
+databend-common-exception = { path = "../../common/exception" }
+databend-common-expression = { path = "../expression" }
+databend-common-hashtable = { path = "../../common/hashtable" }
+databend-common-io = { path = "../../common/io" }
+databend-common-openai = { path = "../../common/openai" }
+databend-common-vector = { path = "../../common/vector" }
+jsonb = { workspace = true }
+
+# Crates.io dependencies
+base64 = "0.21.0"
+blake3 = "1.3.1"
+borsh = { workspace = true, features = ["derive"] }
+bstr = "1.0.1"
+bumpalo = { workspace = true }
+chrono = { workspace = true }
+chrono-tz = { workspace = true }
+crc32fast = "1.3.2"
+criterion = "0.4"
+ctor = "0.1.26"
+ethnum = { workspace = true }
+geo = { workspace = true }
+geohash = "0.13.0"
+geozero = { workspace = true }
+h3o = "0.4.0"
+hex = "0.4.3"
+itertools = { workspace = true }
+lexical-core = "0.8.5"
+libm = "0.2.6"
+match-template = { workspace = true }
+md-5 = "0.10.5"
+memchr = { version = "2", default-features = false }
+naive-cityhash = "0.2.0"
+num-traits = "0.2.15"
+once_cell = { workspace = true }
+ordered-float = { workspace = true, features = [
+    "serde",
+    "rand",
+] }
+#proj = { version = "0.27.2", features = ["geo-types", "bundled_proj"] }
+rand = { workspace = true }
+regex = { workspace = true }
+roaring = "0.10.1"
+#scroll = "0.12.0"
+sha1 = "0.10.5"
+sha2 = "0.10.6"
+simdutf8 = "0.1.4"
+simple_hll = { version = "0.0.1", features = ["serde_borsh"] }
+siphasher = "0.3"
+strength_reduce = "0.2.3"
+stringslice = "0.2.0"
+twox-hash = "1.6.3"
+
+[dev-dependencies]
+comfy-table = "6"
+databend-common-ast = { path = "../ast" }
+goldenfile = "1.4"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[package.metadata.cargo-machete]
+ignored = ["md-5"]
