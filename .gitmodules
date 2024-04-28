@@ -4,3 +4,6 @@
 [submodule "MELD"]
 	path = MELD
 	url = git@github.com:declare-lab/MELD.git
+[submodule "SN-Net"]
+	path = SN-Net
+	url = git@github.com:ziplab/SN-Net.git
