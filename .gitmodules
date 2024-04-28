@@ -7,3 +7,6 @@
 [submodule "SN-Net"]
 	path = SN-Net
 	url = git@github.com:ziplab/SN-Net.git
+[submodule "OpenVoice"]
+	path = OpenVoice
+	url = git@github.com:myshell-ai/OpenVoice.git
