@@ -1,0 +1,6 @@
+[submodule "langchain-gemini-api"]
+	path = langchain-gemini-api
+	url = git@github.com:shamspias/langchain-gemini-api.git
+[submodule "MELD"]
+	path = MELD
+	url = git@github.com:declare-lab/MELD.git
