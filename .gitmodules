@@ -10,3 +10,6 @@
 [submodule "OpenVoice"]
 	path = OpenVoice
 	url = git@github.com:myshell-ai/OpenVoice.git
+[submodule "vits"]
+	path = vits
+	url = git@github.com:jaywalnut310/vits.git
